@@ -1,8 +1,9 @@
-from datetime import datetime
+from datetime import datetime, UTC
 import pandas as pd
 
 def main():
-    df = pd.DataFrame({"hello": ["world"], "time": [datetime.utcnow()]})
+    now = datetime.now(UTC)  # timezone-aware UTC datetime
+    df = pd.DataFrame({"hello": ["world"], "time": [now]})
     print(df)
 
 if __name__ == "__main__":
